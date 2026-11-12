@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    // İÊÍ ãáİ students.txt İí æÖÚ ÇáÅÖÇİÉ (append) áßí áÇ íÊã ãÓÍ ÇáÈíÇäÇÊ ÇáŞÏíãÉ ÚäÏ ÅÏÎÇá ØáÇÈ ÌõÏÏ
+    // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ students.txt ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (append) ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     ofstream outFile("students.txt", ios::app);
 
     if (!outFile) {
@@ -17,9 +17,9 @@ int main() {
     float grade;
 
     do {
-        // ÅÏÎÇá ÈíÇäÇÊ ÇáØÇáÈ
+        
         cout << "Enter student name: ";
-        cin >> ws; // áÊİÑíÛ ÇáÜ buffer ŞÈá ÇÓÊŞÈÇá ÇáÜ string
+        cin >> ws;
         cin.getline(name, 20);
 
         cout << "Enter student ID: ";
@@ -28,16 +28,13 @@ int main() {
         cout << "Enter student grade: ";
         cin >> grade;
 
-        // ßÊÇÈÉ ÇáÈíÇäÇÊ İí Çáãáİ ãÚ İÇÕá '$' ßãÇ ãØáæÈ İí ÇáÊÇÓß
         outFile << name << ", " << id << ", " << grade << " $" << endl;
 
-        // ÇáÓÄÇá ÚãÇ ÅĞÇ ßÇä ÇáãÓÊÎÏã íÑíÏ ÅÖÇİÉ ØÇáÈ ÂÎÑ
         cout << "Do you want to add more records? (y/n): ";
         cin >> choice;
 
     } while (choice == 'y' || choice == 'Y');
 
-    // ÅÛáÇŞ Çáãáİ ÈÚÏ ÇáÇäÊåÇÁ
     outFile.close();
     cout << "Records saved successfully to students.txt" << endl;
 

@@ -9,7 +9,7 @@ int main()
 
     int x;
 
-    for(int i = 0; i < 5; i++)  // åßÊÈ 5 ÏÑÌÇÊ İí Çáãáİ
+    for(int i = 0; i < 5; i++)  
     {
         cout << "Enter grade: ";
         cin >> x;
@@ -18,13 +18,13 @@ int main()
 
     out.close();
 
-    ifstream in("grades.txt"); // ãáİ ááŞÑÇÁå
+    ifstream in("grades.txt"); 
 
     cout << "\nGrades before deletion:\n";
 
-    while(in >> x) // åŞÑÇ ÇáÇÑŞÇã Çáí ÇäÇ ÏÎáÊåÇ
+    while(in >> x) 
     {
-        cout << x << endl; // ÇØÈÚ ÇáÇÑŞÇã
+        cout << x << endl; 
     }
 
     in.close();
@@ -32,11 +32,10 @@ int main()
     int del;
 
     cout << "\nEnter grade to delete: ";
-    cin >> del; // ÇÏÎá ÇáÑŞã Çáí ÚÇæÒ ÊÍĞİå
+    cin >> del; 
 
     in.open("grades.txt");
     ofstream temp("temp.txt");
-//åÚãá ãáİ ãæŞÊ ÇÎÒä İíå ÇáÏÑÌå ÇáÛíÑ ãØáæÈå
     while(in >> x)
     {
         if(x != del)
@@ -49,7 +48,6 @@ int main()
     temp.close();
 
     if(remove("grades.txt") == 0 && rename("temp.txt", "grades.txt") == 0)
-        //ÈÍĞİ ÇáŞÏíã æÇÛíÑ ÇÓã Çáãáİ ÚÔÇä ÇÎáí Çáãáİ ÇáÌÏíÏ ãßÇä ÇáŞÏíã
     {
         cout << "\nGrade deleted successfully!\n";
     }
